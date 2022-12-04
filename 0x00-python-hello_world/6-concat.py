@@ -2,4 +2,4 @@
 str1 = "Holberton"
 str2 = "School"
 new_string = str1 + " " + str2
-print(new_string)
+print(f"{new_string}!")
