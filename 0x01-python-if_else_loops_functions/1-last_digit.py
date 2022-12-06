@@ -6,7 +6,7 @@ last_index_val = int(num_str[len(num_str)-1])
 if (number > 0):
     if (last_index_val > 5):
         print(f"Last digit of {number} is {last_index_val} \
-        and is greater than 5")
+and is greater than 5")
 if (last_index_val == 0):
     print(f"Last digit of {number} is {last_index_val} and is 0")
 if (number < 0):
@@ -14,4 +14,4 @@ if (number < 0):
         print(f"Last digit of {number} is {last_index_val} and is 0")
     elif(last_index_val != 0):
         print(f"Last digit of {number} is {-1 * last_index_val} and \
-        is less than 6 and not 0")
+is less than 6 and not 0")
