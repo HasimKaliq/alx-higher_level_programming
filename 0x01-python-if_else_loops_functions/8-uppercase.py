@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 def uppercase(str):
+    new_string = ""
     for i in str:
         if(ord(i) in range(97, 123)):
-            print("{}".format(chr(ord(i) - 32)), end = '')
+            new_string += chr(ord(i) - 32)
         else:
-            print("{}".format(i),end='')
+            new_string += i
+    print("{}".format(new_string))
+    print('\n')
