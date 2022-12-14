@@ -5,4 +5,4 @@ b = 2
 print("{} + {} = {}\n".format(a, b, add(a, b)))
 if __name__ == "__main__":
     import sys
-    add_0(int(sys.argv[1]))
+    add(int(sys.argv[0]))
