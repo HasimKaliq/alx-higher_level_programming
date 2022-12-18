@@ -10,4 +10,3 @@ def safe_print_list(my_list=[], x=0):
                 break
         print("")
         return (i)
-my_list = [1, 2, 3, 4, 5]
