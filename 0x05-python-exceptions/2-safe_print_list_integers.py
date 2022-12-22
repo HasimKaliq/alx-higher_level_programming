@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def safe_print_list_integers(my_list=[], x=0):
-  size = 0
   try:
+    size = 0
     for index in range(x):
       if type(my_list[index]) is not int:
         continue
