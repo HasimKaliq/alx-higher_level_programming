@@ -3,4 +3,4 @@ def raise_exception():
     try:
         raise TypeError
     except TypeError:
-        return TypeError
+        pass
