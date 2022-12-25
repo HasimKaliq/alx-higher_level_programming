@@ -18,10 +18,8 @@ class Square:
                 ValueError: If the argunment passed is not >= 0.
             """
             if(type(self.__size) is not int):
-                raise TypeError
+                raise TypeError("size must be an integer")
             elif(type(self.__size) is int) and self.__size < 0:
-                raise ValueError
-        except TypeError:
-            print("size must be an integer")
-        except ValueError:
-            print("size must be >= 0")
+                raise ValueError("size must be >=0")
+        except (TypeError,ValueError):
+           pass
