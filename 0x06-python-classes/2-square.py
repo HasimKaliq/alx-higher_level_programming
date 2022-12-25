@@ -12,12 +12,12 @@ class Square:
         """
         self.__size = size
         try:
-            if(type(self.__size) != int):
-                raise TypeError("size must be an integer")
-            elif(self.__size < 0):
-                raise ValueError("size must be >= 0")
-        except (ValueError, TypeError) as e:
-            if(ValueError):
-                print(e)
-            if(TypeError):
-                print(e)
+            if(type(self.__size) is not int):
+                raise TypeError
+            elif(type(self.__size) is int) and self.__size < 0:
+                raise ValueError
+            
+        except TypeError:
+                print("size must be an integer")
+        except ValueError:
+                print("size must be >= 0")
