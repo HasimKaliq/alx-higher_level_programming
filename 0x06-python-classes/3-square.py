@@ -30,7 +30,6 @@ class Square:
             Will return the square of self.__size.
 
         Returns:
-            int: the square of the number self.__size.
-        
+            int: the square of the number self.__size. 
         """ 
-        return (self.__size * self.__size)
+        return(self.__size * self.__size)
