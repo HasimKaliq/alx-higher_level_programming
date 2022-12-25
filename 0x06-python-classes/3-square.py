@@ -25,6 +25,7 @@ class Square:
             raise TypeError("size must be an integer")
         except ValueError:
             raise ValueError("size must be >= 0")
+
     def area(self):
         """The area fuction once the checks are valid
             Will return the square of self.__size.
