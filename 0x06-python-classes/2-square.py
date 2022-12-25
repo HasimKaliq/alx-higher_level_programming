@@ -17,6 +17,6 @@ class Square:
             elif(type(self.__size) is int) and self.__size < 0:
                 raise ValueError
         except TypeError:
-                print("size must be an integer")
+            print("size must be an integer")
         except ValueError:
-                print("size must be >= 0")
+            print("size must be >= 0")
