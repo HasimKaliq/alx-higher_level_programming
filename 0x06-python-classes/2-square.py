@@ -12,6 +12,11 @@ class Square:
         """
         self.__size = size
         try:
+            """
+            Raises:
+                TypeError: If the argunment passed is not an int.
+                ValueError: If the argunment passed is not >= 0.
+            """
             if(type(self.__size) is not int):
                 raise TypeError
             elif(type(self.__size) is int) and self.__size < 0:
