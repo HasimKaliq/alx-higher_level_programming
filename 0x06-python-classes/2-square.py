@@ -11,7 +11,6 @@ class Square:
             size(int): The size for building the square
         """
         self.__size = size
-        
         try:
             if(type(self.__size) != int):
                 raise TypeError("size must be an integer")
