@@ -31,5 +31,5 @@ class Square:
 
         Returns:
             int: the square of the number self.__size.
-        """ 
+        """
         return(self.__size * self.__size)
