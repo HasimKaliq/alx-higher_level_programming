@@ -38,7 +38,7 @@ class Square:
             """
         if not isinstance(value, int):
             raise TypeError("size must be integer")
-        elif value < 0:
+        elif(value < 0):
             raise ValueError("must be >= 0")
         self.__size = value
 
@@ -49,4 +49,8 @@ class Square:
         Returns:
             int: the square of the number self.__size.
         """
-        return self.__size * self.__size
+        return(self.__size * self.__size)
+
+    def my_print(self):
+        pass
+        """Prints in stdout the square with the character #"""
