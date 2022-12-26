@@ -27,6 +27,7 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = self.size
+
     def size(self):
         """The size method returns initaial size
         Returns:
