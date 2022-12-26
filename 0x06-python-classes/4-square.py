@@ -11,6 +11,7 @@ class Square:
             size(int): The size for building the square
         """
         self.size = size
+        self.__size = self.size
         try:
             """
             Raises:
