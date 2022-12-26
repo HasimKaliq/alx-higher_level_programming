@@ -10,28 +10,44 @@ class Square:
         Args:
             size(int): The size for building the square
         """
-        self.__size = size
+        self.size = size
         try:
             """
             Raises:
                 TypeError: If the argunment passed is not an int.
                 ValueError: If the argunment passed is not >= 0.
             """
-            if(type(self.__size) is not int):
+            if(type(self.size) is not int):
                 raise TypeError
-            elif(type(self.__size) is int) and self.__size < 0:
+            elif(type(self.size) is int) and self.size < 0:
                 raise ValueError
         except TypeError:
             raise TypeError("size must be an integer")
         except ValueError:
             raise ValueError("size must be >= 0")
-
+        else:
+            self.__size = self.size
     def size(self):
         """The size method returns initaial size
         Returns:
             int: the initial passed value
         """
-        return self.__size
+        try:
+            """
+            Raises:
+                TypeError: If the argunment passed is not an int.
+                ValueError: If the argunment passed is not >= 0.
+            """
+            if(type(self.size) is not int):
+                raise TypeError
+            elif(type(self.size) is int) and self.size < 0:
+                raise ValueError
+        except TypeError:
+            raise TypeError("size must be an integer")
+        except ValueError:
+            raise ValueError("size must be >= 0")
+        else:
+            return self.__size
 
     def size(self, value):
         """The size method take an extra parameter,
@@ -57,4 +73,20 @@ class Square:
         Returns:
             int: the square of the number self.__size.
         """
-        return(self.__size * self.__size)
+        try:
+            """
+            Raises:
+                TypeError: If the argunment passed is not an int.
+                ValueError: If the argunment passed is not >= 0.
+            """
+            if(type(self.size) is not int):
+                raise TypeError
+            elif(type(self.size) is int) and self.size < 0:
+                raise ValueError
+        except TypeError:
+            raise TypeError("size must be an integer")
+        except ValueError:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = self.size
+            return(self.__size * self.__size)
