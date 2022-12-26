@@ -17,6 +17,7 @@ class Square:
         elif self.size < 0:
             raise ValueError("must be >= 0")
         self.__size = size
+
     @property
     def size(self):
         """The size method returns the size
@@ -24,13 +25,14 @@ class Square:
             int: the size
         """
         return self.__size
+
     @size.setter
     def size(self, value):
         """The size method take an extra parameter,
             the value will be used to update self__size
         Args:
             value(int): the argument expected
-        
+
         Raises:
             TypeError: If the argunment passed is not an int.
             ValueError: If the argunment passed is not >= 0.
