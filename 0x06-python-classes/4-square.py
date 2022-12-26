@@ -11,61 +11,35 @@ class Square:
             size(int): The size for building the square
         """
         self.size = size
-        try:
-            """
-            Raises:
-                TypeError: If the argunment passed is not an int.
-                ValueError: If the argunment passed is not >= 0.
-            """
-            if(type(self.size) is not int):
-                raise TypeError
-            elif(type(self.size) is int) and self.size < 0:
-                raise ValueError
-        except TypeError:
-            raise TypeError("size must be an integer")
-        except ValueError:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = self.size
 
+        if not isinstance(self.size, int):
+            raise TypeError("size must be integer")
+        elif self.size < 0:
+            raise ValueError("must be >= 0")
+        self.__size = size
+    @property
     def size(self):
-        """The size method returns initaial size
+        """The size method returns the size
         Returns:
-            int: the initial passed value
+            int: the size
         """
-        try:
-            """
-            Raises:
-                TypeError: If the argunment passed is not an int.
-                ValueError: If the argunment passed is not >= 0.
-            """
-            if(type(self.size) is not int):
-                raise TypeError
-            elif(type(self.size) is int) and self.size < 0:
-                raise ValueError
-        except TypeError:
-            raise TypeError("size must be an integer")
-        except ValueError:
-            raise ValueError("size must be >= 0")
-        else:
-            return self.__size
-
+        return self.__size
+    @size.setter
     def size(self, value):
         """The size method take an extra parameter,
             the value will be used to update self__size
         Args:
             value(int): the argument expected
+        
+        Raises:
+            TypeError: If the argunment passed is not an int.
+            ValueError: If the argunment passed is not >= 0.
             """
+        if not isinstance(value, int):
+            raise TypeError("size must be integer")
+        elif(value < 0):
+            raise ValueError("must be >= 0")
         self.__size = value
-        try:
-            if(type(self.__size) is not int):
-                raise TypeError
-            elif(type(self.__size) is int) and self.__size < 0:
-                raise ValueError
-        except TypeError:
-            raise TypeError("size must be an integer")
-        except ValueError:
-            raise ValueError("size must be >= 0")
 
     def area(self):
         """The area fuction once the checks are valid
@@ -74,20 +48,4 @@ class Square:
         Returns:
             int: the square of the number self.__size.
         """
-        try:
-            """
-            Raises:
-                TypeError: If the argunment passed is not an int.
-                ValueError: If the argunment passed is not >= 0.
-            """
-            if(type(self.size) is not int):
-                raise TypeError
-            elif(type(self.size) is int) and self.size < 0:
-                raise ValueError
-        except TypeError:
-            raise TypeError("size must be an integer")
-        except ValueError:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = self.size
-            return(self.__size * self.__size)
+        return(self.__size * self.__size)
