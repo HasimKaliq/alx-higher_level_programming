@@ -52,5 +52,25 @@ class Square:
         return(self.__size * self.__size)
 
     def my_print(self):
-        pass
         """Prints in stdout the square with the character #"""
+        for i in range(1, self.__size + 1):
+            for i in range(1, self.__size + 1):
+                print("#",end="")
+            print()
+
+Square = __import__('5-square').Square
+
+my_square = Square(3)
+my_square.my_print()
+
+print("--")
+
+my_square.size = 10
+my_square.my_print()
+
+print("--")
+
+my_square.size = 0
+my_square.my_print()
+
+print("--")
