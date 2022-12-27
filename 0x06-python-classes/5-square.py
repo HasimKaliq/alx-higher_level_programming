@@ -55,5 +55,5 @@ class Square:
         """Prints in stdout the square with the character #"""
         for i in range(1, self.__size + 1):
             for i in range(1, self.__size + 1):
-                print("#",end="")
+                print("#", end="")
             print()
