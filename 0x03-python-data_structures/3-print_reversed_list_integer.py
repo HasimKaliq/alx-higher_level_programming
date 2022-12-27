@@ -6,7 +6,7 @@
     If I can't build it from scratch, it's not fun,
     I always get a feeling of less fulfillment,
     when I have to call a method.
-    Take the code below I could have called the method reverse on the list 
+    Take the code below I could have called the method reverse on the list
     but i'd loose the enjoyment
     of knowing how things work.
     maybe I give too much to details?
