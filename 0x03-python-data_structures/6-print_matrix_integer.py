@@ -9,6 +9,7 @@ def print_matrix_integer(matrix=[[]]):
     for row in matrix:
         if len(row) == 0:
             continue
-        for val in row:
-            print("{:d}".format(val), end=" ")
-        print()
+        else:
+            for val in row:
+                print("{:d}".format(val), end=" ")
+            print()
