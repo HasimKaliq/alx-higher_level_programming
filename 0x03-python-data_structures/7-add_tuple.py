@@ -25,16 +25,6 @@ def add_tuple(tuple_a=(), tuple_b=()):
         temp_b = temp_b[0:2]
 
     for idx in range(len(temp_a)):
-        temp_c.append(temp_a[idx] + temp_b[idx]) 
+        temp_c.append(temp_a[idx] + temp_b[idx])
 
     return tuple(temp_c)
-
-
-tuple_a = (1, 89, 34, 42)
-tuple_b = (88, 11, 53, 53)
-new_tuple = add_tuple(tuple_a, tuple_b)
-print("--------------------------------------------------------------------")
-print(new_tuple)
-
-print(add_tuple(tuple_a, (1, )))
-print(add_tuple(tuple_a, ()))
