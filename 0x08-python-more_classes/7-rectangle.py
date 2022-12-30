@@ -2,9 +2,20 @@
 
 
 class Rectangle:
+
+    # Public class attribute number_of_instances:
+    # Initialized to 0
+    # Incremented during each new instance instantiation
+    # Decremented during each instance deletion
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
+        # The name of class is used to access the class
+        # Attributes.
+        Rectangle.number_of_instances += 1
 
     def __str__(self):
         rect = []
@@ -19,7 +30,7 @@ class Rectangle:
 
         for i in range(self.__height):
             for j in range(self.__width):
-                rect.append("#")
+                rect.append(str(self.print_symbol))
             if i != self.__height - 1:
                 rect.append("\n")
         return "".join(rect)
@@ -39,6 +50,7 @@ class Rectangle:
 
     def __del__(self):
         print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
 
     @property
     def width(self):
