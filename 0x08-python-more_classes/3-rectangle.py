@@ -12,23 +12,6 @@ class Rectangle:
             width(int): the first parameter
             height(int): the second parameter
         """
-        if not isinstance(self.__width, int):
-            raise TypeError("width must be an integer")
-
-        elif self.__width < 0:
-            raise ValueError("width must be >= 0")
-
-        else:
-            self.__width = width
-
-        if not isinstance(self.__height, int):
-            raise TypeError("height must be an integer")
-
-        elif self.__height < 0:
-            raise ValueError("height must be >= 0")
-
-        else:
-            self.__height = height
 
     def __str__(self):
         """The __str__ magic method returns a
