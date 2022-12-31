@@ -2,6 +2,7 @@
 
 
 class Rectangle:
+    """Constructs a Rectangle object"""
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
@@ -111,3 +112,16 @@ class Rectangle:
             """
             perimeter = 2 * (self.__height + self.__width)
             return perimeter
+
+my_rectangle = Rectangle(2, 4)
+print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+
+print(str(my_rectangle))
+print(repr(my_rectangle))
+
+print("--")
+
+my_rectangle.width = 10
+my_rectangle.height = 3
+print(my_rectangle)
+print(repr(my_rectangle))
