@@ -81,5 +81,8 @@ class Rectangle:
             return 0
         else:
             """Perimeter: 2(L+W)"""
+            """Return:
+                    int: Perimeter of H and W
+            """
             perimeter = 2 * (self.__height + self.__width)
             return perimeter
