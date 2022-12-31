@@ -30,7 +30,6 @@ class Rectangle:
         """The __str__ magic method returns a
             String rep of the object
         """
-
         """Return:
             String: an empty string if the condition below is met"""
         rect = []
@@ -112,16 +111,3 @@ class Rectangle:
             """
             perimeter = 2 * (self.__height + self.__width)
             return perimeter
-
-my_rectangle = Rectangle(2, 4)
-print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
-
-print(str(my_rectangle))
-print(repr(my_rectangle))
-
-print("--")
-
-my_rectangle.width = 10
-my_rectangle.height = 3
-print(my_rectangle)
-print(repr(my_rectangle))
