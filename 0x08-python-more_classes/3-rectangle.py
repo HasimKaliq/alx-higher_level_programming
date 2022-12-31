@@ -113,5 +113,4 @@ class Rectangle:
             """Return:
                     int: Perimeter of H and W
             """
-            perimeter = 2 * (self.__height + self.__width)
-            return perimeter
+            return ((self.__width * 2) + (self.__height * 2))
