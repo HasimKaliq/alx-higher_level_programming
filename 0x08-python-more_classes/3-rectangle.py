@@ -14,15 +14,19 @@ class Rectangle:
         """
         if not isinstance(self.__width, int):
             raise TypeError("width must be an integer")
+
         elif self.__width < 0:
             raise ValueError("width must be >= 0")
+
         else:
             self.__width = width
 
         if not isinstance(self.__height, int):
             raise TypeError("height must be an integer")
+
         elif self.__height < 0:
             raise ValueError("height must be >= 0")
+
         else:
             self.__height = height
 
@@ -36,20 +40,20 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
 
-        for i in range(self.__height):
-            [rect.append("#") for j in range(self.__width)]
-            if i != self.__height - 1:
-                rect.append("\n")
-        return ("".join(rect))
+        # for i in range(self.__height):
+        #     [rect.append("#") for j in range(self.__width)]
+        #     if i != self.__height - 1:
+        #         rect.append("\n")
+        # return ("".join(rect))
         """Return:
                 List: A list containg the solution
         """
-        # for i in range(self.__height):
-        #     for j in range(self.__width):
-        #         rect.append("#")
-        #     if i != self.__height - 1:
-        #         rect.append("\n")
-        # return "".join(rect)
+        for i in range(self.__height):
+            for j in range(self.__width):
+                rect.append("#")
+            if i != self.__height - 1:
+                rect.append("\n")
+        return "".join(rect)
 
     @property
     def width(self):
@@ -88,11 +92,11 @@ class Rectangle:
             self.__height = height
 
     def area(self):
-        """A method for computing area"""
-        """Area: L X W """
-        """Return:
-                int: area of the W and H using the
-                    above formula
+        """A method for computing area
+        Area: L X W
+        Return:
+            int:
+                area of the W and H using the above formula
         """
         area = self.__height * self.__width
         return area
