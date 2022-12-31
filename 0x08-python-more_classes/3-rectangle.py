@@ -12,6 +12,23 @@ class Rectangle:
             width(int): the first parameter
             height(int): the second parameter
         """
+        if not isinstance(self.__width, int):
+            raise TypeError("width must be an integer")
+
+        elif self.__width < 0:
+            raise ValueError("width must be >= 0")
+
+        else:
+            self.__width = width
+
+        if not isinstance(self.__height, int):
+            raise TypeError("height must be an integer")
+
+        elif self.__height < 0:
+            raise ValueError("height must be >= 0")
+
+        else:
+            self.__height = height
 
     def __str__(self):
         """The __str__ magic method returns a
@@ -19,7 +36,6 @@ class Rectangle:
         """
         """Return:
             String: an empty string if the condition below is met"""
-        rect = []
         if self.__width == 0 or self.__height == 0:
             return ""
 
@@ -31,6 +47,7 @@ class Rectangle:
         """Return:
                 List: A list containg the solution
         """
+        rect = []
         for i in range(self.__height):
             for j in range(self.__width):
                 rect.append("#")
