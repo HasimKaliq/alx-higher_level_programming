@@ -98,8 +98,7 @@ class Rectangle:
             int:
                 area of the W and H using the above formula
         """
-        area = self.__height * self.__width
-        return area
+        return (self.__width * self.__height)
 
     def perimeter(self):
         """A method for computing the perimeter"""
