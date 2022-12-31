@@ -3,15 +3,15 @@
 
 class Rectangle:
     """Constructs a Rectangle object"""
-    def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
 
-        """
+    def __init__(self, width=0, height=0):
+        """ Construct Rectangle object
         Args:
             width(int): the first parameter
             height(int): the second parameter
         """
+        self.__width = width
+        self.__height = height
 
     def __str__(self):
         """A string representation of object"""
