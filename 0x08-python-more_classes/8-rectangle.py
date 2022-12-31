@@ -1,18 +1,94 @@
 #!/usr/bin/python3
+"""Defines a Rectangle class."""
 
 
 class Rectangle:
-
-    # Public class attribute number_of_instances:
-    # Initialized to 0
-    # Incremented during each new instance instantiation
-    # Decremented during each instance deletion
+    """Represent a rectangle."""
     number_of_instances = 0
     print_symbol = "#"
 
+    def __init__(self, width=0, height=0):
+        """Initialize a new Rectangle.
+
+        Args:
+            width (int): The width of the new rectangle.
+            height (int): The height of the new rectangle.
+        """
+        self.width = width
+        self.height = height
+        Rectangle.number_of_instances += 1
+
+    @property
+    def width(self):
+        """Get/set the width of the Rectangle."""
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
+
+    @property
+    def height(self):
+        """Get/set the height of the Rectangle."""
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
+
+    def area(self):
+        """Return the area of the Rectangle."""
+        return (self.__width * self.__height)
+
+    def perimeter(self):
+        """Return the perimeter of the Rectangle."""
+        if self.__width == 0 or self.__height == 0:
+            return (0)
+        return ((self.__width * 2) + (self.__height * 2))
+
+    def __str__(self):
+        """Return the printable representation of the Rectangle.
+
+        Represents the rectangle with the # character.
+        """
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+
+        rect = []
+        for i in range(self.__height):
+            [rect.append(str(self.print_symbol)) for j in range(self.__width)]
+            if i != self.__height - 1:
+                rect.append("\n")
+        return ("".join(rect))
+
+    def __repr__(self):
+        """Expected output:--> Rectangle(width, height)"""
+        """I could using string write the name of the class"""
+        """like so "Rectangle, but if we change the class name"""
+        """it become less flexible and breaks, sooooo"""
+        """The solution below save the name of the class using"""
+        """self.__class__ since self is the instance of the class"""
+        """Then use the varibale name.__name__ to get the origin"""
+        """The actual name of the class, you know the one with the"""
+        """Capital letter starting it.😁"""
+        name_of_class = self.__class__
+        return f"{name_of_class.__name__}({self.__width}, {self.__height})"
+
+    def __del__(self):
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
+
     def bigger_or_equal(rect_1, rect_2):
         """
-        Static method def bigger_or_equal(rect_1, rect_2):
+        Static method
         that returns the biggest rectangle based on the area
         """
         """
@@ -38,84 +114,3 @@ class Rectangle:
                 return rect_1
             else:
                 return rect_2
-
-    def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
-        # The name of class is used to access the class
-        # Attributes.
-        Rectangle.number_of_instances += 1
-
-    def __str__(self):
-        rect = []
-        if self.__width == 0 or self.__height == 0:
-            return ""
-
-        # for i in range(self.__height):
-        #     [rect.append("#") for j in range(self.__width)]
-        #     if i != self.__height - 1:
-        #         rect.append("\n")
-        # return ("".join(rect))
-
-        for i in range(self.__height):
-            for j in range(self.__width):
-                rect.append(str(self.print_symbol))
-            if i != self.__height - 1:
-                rect.append("\n")
-        return "".join(rect)
-
-    def __repr__(self):
-        """Expected output:--> Rectangle(width, height)"""
-        """I could using string write the name of the class"""
-        """like so "Rectangle, but if we change the class name"""
-        """it become less flexible and breaks, sooooo"""
-        """The solution below save the name of the class using"""
-        """self.__class__ since self is the instance of the class"""
-        """Then use the varibale name.__name__ to get the origin"""
-        """The actual name of the class, you know the one with the"""
-        """Capital letter starting it.😁"""
-        name_of_class = self.__class__
-        return f"{name_of_class.__name__}({self.__width}, {self.__height})"
-
-    def __del__(self):
-        print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
-
-    @property
-    def width(self):
-        return self.__width
-
-    @width.setter
-    def width(self, width):
-        if not isinstance(width, int):
-            raise TypeError("width must be an integer")
-        elif width < 0:
-            raise ValueError("width must be >= 0")
-        else:
-            self.__width = width
-
-    @property
-    def height(self):
-        return self.__height
-
-    @height.setter
-    def height(self, height):
-        if not isinstance(height, int):
-            raise TypeError("height must be an integer")
-        elif height < 0:
-            raise ValueError("height must be >= 0")
-        else:
-            self.__height = height
-
-    def area(self):
-        """Area: L X W """
-        area = self.__height * self.__width
-        return area
-
-    def perimeter(self):
-        if self.__width == 0 or self.__height == 0:
-            return 0
-        else:
-            """Perimeter: 2(L+W)"""
-            perimeter = 2 * (self.__height + self.__width)
-            return perimeter
