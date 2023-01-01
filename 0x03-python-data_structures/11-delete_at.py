@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""This is actually pop() from the ground up,
+"""This is the most basic pop() from the ground up,
     at least my own implementation 😂😂"""
 
 
