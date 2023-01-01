@@ -3,11 +3,12 @@
 
 
 def best_score(a_dictionary):
-    dict_by_values = list(a_dictionary.values())
-    dict_by_values.sort()
-    largest_val = dict_by_values[len(dict_by_values)-1]
-    for key in a_dictionary.keys():
-        if a_dictionary[key] == largest_val:
-            return key
-        else:
-            return None
+    if isinstance(a_dictionary, dict):
+        dict_by_values = list(a_dictionary.values())
+        dict_by_values.sort()
+        largest_val = dict_by_values[len(dict_by_values)-1]
+        for key in a_dictionary.keys():
+            if a_dictionary[key] == largest_val:
+                return key
+    else:
+        return None
