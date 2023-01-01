@@ -12,5 +12,3 @@ def best_score(a_dictionary):
         for key in a_dictionary.keys():
             if a_dictionary[key] == largest_val:
                 return key
-            else:
-                return None
