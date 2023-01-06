@@ -14,4 +14,6 @@ def lookup(obj):
     Returns:
         list: A list of inbuilt or attributes of the obj.
     """
-    return (dir(object))
+    if obj is None:
+        return None
+    return (list(dir(object)))
