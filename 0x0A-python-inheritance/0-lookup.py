@@ -14,4 +14,7 @@ def lookup(obj):
     Returns:
         list: A list of inbuilt or attributes of the obj.
     """
-    return (list(dir(object)))
+    lst_obj = []
+    for attr in dir(obj):
+        lst_obj.append(attr)
+    return (lst_obj)
