@@ -10,7 +10,7 @@ def is_same_class(obj, a_class):
               False if not
     """
     try:
-        if obj.__class__ == a_class:
+        if obj.__class__ is a_class:
             return True
         else:
             return False
