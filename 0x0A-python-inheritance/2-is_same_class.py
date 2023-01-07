@@ -9,7 +9,8 @@ def is_same_class(obj, a_class):
         Bool: True if  instance
               False if not
     """
-    if isinstance(obj, a_class):
-        return True
-    else:
-        return False
+    try:
+        if isinstance(obj, a_class):
+            return True
+    except ValueError:
+        return None
